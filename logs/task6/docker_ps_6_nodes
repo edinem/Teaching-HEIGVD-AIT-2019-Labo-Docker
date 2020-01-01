@@ -1,0 +1,8 @@
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                                                                                    NAMES
+1093365b7f35        webapp              "/init"                  About a minute ago   Up About a minute   3000/tcp, 7373/tcp, 7946/tcp                                                             s6
+7de301514b28        webapp              "/init"                  3 minutes ago        Up 3 minutes        3000/tcp, 7373/tcp, 7946/tcp                                                             s5
+3644c6e996c4        webapp              "/init"                  3 minutes ago        Up 3 minutes        3000/tcp, 7373/tcp, 7946/tcp                                                             s4
+3bc66cfd8621        webapp              "/init"                  3 minutes ago        Up 3 minutes        3000/tcp, 7373/tcp, 7946/tcp                                                             s3
+e2a6146a4551        labo4_webapp2       "/init"                  3 minutes ago        Up 3 minutes        7373/tcp, 7946/tcp, 0.0.0.0:4001->3000/tcp                                               s2
+fe504168c820        labo4_webapp1       "/init"                  3 minutes ago        Up 3 minutes        7373/tcp, 7946/tcp, 0.0.0.0:4000->3000/tcp                                               s1
+5c3a2b5bac08        labo4_haproxy       "/init /scripts/run.…"   4 minutes ago        Up 4 minutes        0.0.0.0:80->80/tcp, 7373/tcp, 0.0.0.0:1936->1936/tcp, 0.0.0.0:9999->9999/tcp, 7946/tcp   ha

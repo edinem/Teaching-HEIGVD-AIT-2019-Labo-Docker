@@ -1,0 +1,34 @@
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+/opt/bin/serf agent --join ha --tag role=backend
+==> Starting Serf agent...
+==> Starting Serf agent RPC...
+==> Serf agent running!
+         Node name: 'f8d5e653d9b9'
+         Bind addr: '0.0.0.0:7946'
+          RPC addr: '127.0.0.1:7373'
+         Encrypted: false
+          Snapshot: false
+           Profile: lan
+==> Joining cluster...(replay: false)
+    Join completed. Synced with 1 initial agents
+
+==> Log data will now stream in as it occurs:
+
+    2019/12/31 15:01:38 [INFO] agent: Serf agent starting
+    2019/12/31 15:01:38 [INFO] serf: EventMemberJoin: f8d5e653d9b9 192.168.42.22
+    2019/12/31 15:01:38 [INFO] agent: joining: [ha] replay: false
+    2019/12/31 15:01:38 [INFO] serf: EventMemberJoin: 2bc91b62e9b3 192.168.42.11
+    2019/12/31 15:01:38 [INFO] serf: EventMemberJoin: 329279e96bfa 192.168.42.42
+    2019/12/31 15:01:38 [INFO] agent: joined: 1 nodes
+Application started
+    2019/12/31 15:01:39 [INFO] agent: Received event: member-join
+HEAD / 200 9.364 ms - 114
+HEAD / 200 9.291 ms - 114
+
