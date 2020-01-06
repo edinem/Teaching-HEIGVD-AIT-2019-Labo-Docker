@@ -135,7 +135,7 @@ Dans ce laboratoire, nous allons prendre en main Docker mais également effectue
 
 2. Describe your difficulties for this task and your understanding of what is happening during this task. Explain in your own words why are we installing a process supervisor. Do not hesitate to do more research and to find more articles on that topic to illustrate the problem.
 
-   Nous avons utilisé le superviseur de processus `s6` afin de pouvoir exécuter plusieurs procéssus dans un même container. Ce dernier point est contraire à la philosophie de Docker. En effet, il considère que un seul processus ne peut tourner dans un container. La philosophie que nous nous avons implémentés avec le superviseur est que un container est utilisé pour une tâche mais qui nécessite plusieurs processus. Le fait d'avoir un superviseur permet une plus grande flexibilité dans les containers. Le processus principal est `init` et à partir de là, tous les autres processus seront gérés par `s6` et seront est processus enfants.
+   Nous avons utilisé le superviseur de processus `s6` afin de pouvoir exécuter plusieurs procéssus dans un même container. Ce dernier point est contraire à la philosophie de Docker. En effet, il considère que un seul processus ne peut tourner dans un container. La philosophie que nous nous avons implémentés avec le superviseur est que un container est utilisé pour une tâche mais qui nécessite plusieurs processus. Le fait d'avoir un superviseur permet une plus grande flexibilité dans les containers. Le processus principal est `init` et à partir de là, tous les autres processus seront gérés par `s6` et seront des processus enfants à `init`.
 
 ### Task 2: Add a tool to manage membership in the web server cluster
 
@@ -210,6 +210,8 @@ RUN command 1 && command 2 && command 3
 - `docker_inspect_s2` : contenu de la commande `docker inspect s2`
 
 4. Based on the three output files you have collected, what can you say about the way we generate it? What is the problem if any?
+
+   
 
 ### Task 5: Generate a new load balancer configuration when membership changes
 
