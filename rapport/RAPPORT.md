@@ -1,6 +1,6 @@
 # Laboratoire 4 - AIT - Docker
 
-## Auteurs : Daniel Oliveira Paiva 
+## Auteurs : Daniel Oliveira Paiva et Edin Mujkanovic
 
 ## Introduction
 
@@ -19,7 +19,7 @@ Dans ce laboratoire, nous allons prendre en main Docker mais également effectue
 
    Ci-dessous, une capture d'écran présentant la page de *HAProxy* : 
 
-   ![Screenshot from 2019-12-04 15-32-18](./images/Screenshot from 2019-12-04 15-32-18.png)
+   ![Screenshot from 2019-12-04 15-32-18](./images/task0/Screenshot from 2019-12-04 15-32-18.png)
 
 2. *Give the URL of your repository URL in the lab report.*
 
@@ -131,7 +131,7 @@ Dans ce laboratoire, nous allons prendre en main Docker mais également effectue
 
    Ci-dessous, une capture présentant la page de *HAProxy* :
 
-   ![final_task1](./images/final_task1.png)
+   ![final_task1](./images/task1/final_task1.png)
 
 2. Describe your difficulties for this task and your understanding of what is happening during this task. Explain in your own words why are we installing a process supervisor. Do not hesitate to do more research and to find more articles on that topic to illustrate the problem.
 
@@ -211,6 +211,28 @@ RUN command 1 && command 2 && command 3
 
 4. Based on the three output files you have collected, what can you say about the way we generate it? What is the problem if any?
 
+   Ci-dessous, le contenu des trois fichiers : 
+
+   haproxy.cfg : 
+
+   ```
+   Container b7c8c0621600 has joined the Serf cluster with the following IP address: 192.168.42.42
+   ```
+
+   haproxy_s1_joined.cfg : 
+
+   ```
+   Container c7107f67dbe2 has joined the Serf cluster with the following IP address: 192.168.42.11
+   ```
+
+   haproxy_s2_joined.cfg : 
+
+   ```
+   Container 3055a8910f8e has joined the Serf cluster with the following IP address: 192.168.42.22
+   ```
+
+   Comme nous pouvons le remarquer, le fichier est écrasé à chaque fois qu'un noeud rejoind le cluster. L'ideal serait d'ajouter dynamiquement le contenu au lieu de l'écraser.
+
 ### Task 5: Generate a new load balancer configuration when membership changes
 
 1. Provide the file `/usr/local/etc/haproxy/haproxy.cfg` generated in the `ha` container after each step. Three files are expected.
@@ -279,4 +301,4 @@ RUN command 1 && command 2 && command 3
 
 ## Conclusion
 
-En conclusion, nous avons bien fait toutes les étapes et sommes parvenus au but souhaité. La gestion automatique du cluster était très intéressante à mettre en place.
+En conclusion, nous avons bien fait toutes les étapes et sommes parvenus au but souhaité. La gestion automatique du cluster nous était inconnue et était très intéressante à mettre en place.
